@@ -1,0 +1,11 @@
+name: Pull Trigger
+
+on:
+  pull_request:
+    types: [closed]
+jobs:
+  on-merge:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - run: echo 'The triggering workflow passed'
