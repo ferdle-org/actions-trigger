@@ -15,10 +15,10 @@ jobs:
     steps:
       - id: step1
         run: |
-          expr 3 + 7 >> "$GITHUB_OUTPUT"
+          expr 3 + 7 >> "$SOMA1"
       - id: step2
         run: |
-          expr 10 + 7 >> "$GITHUB_OUTPUT"          
+          expr 10 + 7 >> "$SOMA2"          
 
   job_2:
     name: Test Jobs.JobID.Output
