@@ -1,0 +1,28 @@
+# testing jobs.job_id.output https://docs.github.com/en/enterprise-cloud@latest/actions/using-jobs/defining-outputs-for-jobs
+
+name: Share data between jobs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job_1:
+    name: Add 3 and 7
+    runs-on: ubuntu-latest
+    steps:
+      - id: step1
+        run: |
+          expr 3 + 7 >> "$GITHUB_OUTPUT"
+      - id: step2
+        run: |
+          expr 10 + 7 >> "$GITHUB_OUTPUT"          
+
+  job_2:
+    name: Test Jobs.JobID.Output
+    needs: job_1
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          OUTPUT1: ${{needs.jobs1.outputs.output1}}
+          OUTPUT2: ${{needs.jobs1.outputs.output2}}
+        run: echo "$OUTPUT1 $OUTPUT2"
