@@ -1,6 +1,6 @@
 # testing jobs.job_id.output https://docs.github.com/en/enterprise-cloud@latest/actions/using-jobs/defining-outputs-for-jobs
 
-name: Share data between jobs
+name: Test Defining Outputs
 
 on:
   workflow_dispatch:
