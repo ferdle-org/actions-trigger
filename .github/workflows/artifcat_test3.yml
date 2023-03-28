@@ -11,6 +11,7 @@ jobs:
       - name: download the final result
         shell: bash
         run: |
+          gh auth login --with-token ${{ secrets.TEST_ARTIFACT }}
           gh run download 4537246876 -n homework
         env:
           GH_TOKEN: ${{ secrets.TEST_ARTIFACT }}
