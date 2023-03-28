@@ -1,0 +1,14 @@
+name: Download
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  job1:
+    name: Download artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: download the final result
+        shell: bash
+        run: |
+          gh run download 4537246876 -n homework
