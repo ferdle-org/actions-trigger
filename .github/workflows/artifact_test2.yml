@@ -3,7 +3,7 @@
 name: Test Defining Outputs
 
 on:
-  workflow_dispatch:
+  push
 
 jobs:
   job_1:
